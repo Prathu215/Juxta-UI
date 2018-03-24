@@ -1,0 +1,100 @@
+<div class="container-fluid">
+           <div class="well">
+              <h1>Automobiles Entry</h1>
+           </div>
+
+           <div class="row">
+            <div class="col-sm-2"></div> 
+            <div class="col-sm-8"> 
+              <form [formGroup]="automobilesForm">
+                <div class="row"> 
+                  <div class="col-sm-2">Brand</div> 
+                  <div class="col-sm-4">
+                    <input formControlName="Brand" type="text" class="form-control">
+                  </div>
+                  <div class="col-sm-4"></div> 
+                </div>
+                <div class="row"> 
+                  <div class="col-sm-2">Series</div> 
+                  <div class="col-sm-4">
+                    <input formControlName="series" type="text" class="form-control">
+                  </div>
+                  <div class="col-sm-4"></div> 
+                </div>
+                <div class="row"> 
+                  <div class="col-sm-2">Model</div> 
+                  <div class="col-sm-4">
+                    <input formControlName="model" type="text" class="form-control">
+                  </div>
+                  <div class="col-sm-4"></div> 
+                </div>
+                <div class="row"> 
+                  <div class="col-sm-2">Year</div> 
+                  <div class="col-sm-4">
+                    <input formControlName="year" type="text" class="form-control">
+                  </div>
+                  <div class="col-sm-4"></div> 
+                </div>
+                <div class="row"> 
+                  <div class="col-sm-2">Price</div> 
+                  <div class="col-sm-4">
+                    <input formControlName="Price" type="number" class="form-control">
+                  </div>
+                  <div class="col-sm-4"></div> 
+                </div>
+                <div class="row"> 
+                  <div class="col-sm-2">Engine</div> 
+                  <div class="col-sm-4">
+                    <input formControlName="engine" type="text" class="form-control">
+                  </div>
+                  <div class="col-sm-4"></div> 
+                </div>
+                <div class="row"> 
+                  <div class="col-sm-2">Type</div> 
+                  <div class="col-sm-4">
+                    <input formControlName="type" type="text" class="form-control">
+                  </div>
+                  <div class="col-sm-4"></div> 
+                </div>
+                <div class="row">
+                  <div class="col-sm-2">Horse Power</div>  
+                  <div class="col-sm-4">
+                    <input formControlName="horsePower" type="text" class="form-control">
+                  </div>
+                  <div class="col-sm-4"></div> 
+                </div>
+                <div class="row">
+                  <div class="col-sm-2">Curb Weight</div>
+                  <div class="col-sm-4">
+                    <input formControlName="curbWeight" type="text" class="form-control">
+                  </div>
+                  <div class="col-sm-4"></div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-sm-2">MPG</div>
+                  <div class="col-sm-4">
+                    <input type="number" formControlName="mpg" class="form-control">
+                  </div>
+                  <div class="col-sm-4"></div>
+                </div>
+                
+               
+                <div class="row">
+                  <div class="col-sm-2"></div>
+                  <div class="col-sm-4">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                    <button class="btn btn-primary" (click)="clearForm()">Clear</button>
+                  </div>
+                  
+                  <div class="col-sm-4"></div>
+                </div>
+       
+      
+                
+
+              </form>    
+             
+      </div>
+
+    

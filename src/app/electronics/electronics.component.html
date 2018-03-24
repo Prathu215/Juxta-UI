@@ -1,0 +1,123 @@
+<div class="container-fluid">
+  <div class="well">
+    <h1>Electronics</h1>
+  </div>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <form [formGroup]="electronicsForm">
+        <div class="row">
+          <div class="col-sm-2">Brand</div>
+          <div class="col-sm-4">
+            <!-- <input formControlName="brand" type="number" class="form-control"> -->
+            <select name="" id="" class="form-control" formControlName="brandType">
+              <option [value]="i.id" *ngFor="let i of brandType">{{i.name}}</option>
+            </select>
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">Model</div>
+          <div class="col-sm-4">
+            <input formControlName="model" type="number" class="form-control">
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">Series</div>
+          <div class="col-sm-4">
+            <input formControlName="series" type="number" class="form-control">
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">Type</div>
+          <div class="col-sm-4">
+            <select name="deviceType" class="form-control" formControlName="deviceType">
+              <option [value]="i.id" *ngFor="let i of deviceType">{{i.name}}</option>
+            </select>
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">RAM</div>
+          <div class="col-sm-4">
+            <input formControlName="ram" type="text" class="form-control">
+          </div>
+          <div class="col-sm-4">
+            <h5>GB</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">HDD</div>
+          <div class="col-sm-4">
+            <input formControlName="hdd" type="number" class="form-control">
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">Price</div>
+          <div class="col-sm-4">
+            <input formControlName="price" type="number" class="form-control">
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">Processor</div>
+          <div class="col-sm-4">
+            <input formControlName="processor" type="number" class="form-control">
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">ScreenSize</div>
+          <div class="col-sm-4">
+            <input formControlName="screenSize" type="number" class="form-control">
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">Battery Power</div>
+          <div class="col-sm-4">
+            <input formControlName="batteryPower" type="number" class="form-control">
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">USB Slots</div>
+          <div class="col-sm-4">
+            <input formControlName="usbSlots" type="number" class="form-control">
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">HDMI</div>
+          <div class="col-sm-8">
+            <!-- <label for="" class="radio-inline border">
+              <input type="radio" value="true" formControlName="hdmi">    yes          
+            </label>
+            <label for="" class="radio-inline">
+            <input type="radio" value="false" formControlName="hdmi">No
+            
+            </label> -->
+            <input type="radio" class="radio-inline" formControlName="hdmi" value="true">
+            <span style="font-size: 12px;margin-left:1%;">yes</span>
+            <input type="radio" class="radio-inline" formControlName="hdmi" value="false">
+            <span style="font-size:12px;margin-left:1%;">no</span>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-4">
+            <button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-primary" (click)="clearForm()">Clear</button>
+          </div>
+
+          <div class="col-sm-4"></div>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+.col-sm-2:first-child{
+    font-size: 14px;
+    text-align: right;
+}
+
+.row{
+    margin-top:1%;
+}
+
+.border{
+    border: 1px solid black;
+}

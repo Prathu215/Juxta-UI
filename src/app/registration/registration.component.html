@@ -1,0 +1,128 @@
+<div class="container-fluid"> 
+
+  <div [hidden]="showForm">
+
+    <div class="well">
+      <h1>Registration</h1>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2"></div> 
+      <div class="col-sm-8"> 
+        <form [formGroup]="registrationForm" (ngSubmit)="saveRegistrationData()">
+          <div class="row"> 
+            <div class="col-sm-2">First Name</div> 
+            <div class="col-sm-4">
+              <input formControlName="firstName" type="text" class="form-control">
+            </div>
+            <div class="col-sm-4"></div> 
+          </div>
+          <div class="row">
+            <div class="col-sm-2">Last Name</div>  
+            <div class="col-sm-4">
+              <input formControlName="lastName" type="text" class="form-control">
+            </div>
+            <div class="col-sm-4"></div> 
+          </div>
+          <div class="row">
+            <div class="col-sm-2">Email</div>
+            <div class="col-sm-4">
+              <input formControlName="email" type="email" class="form-control">
+            </div>
+            <div class="col-sm-4"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2">Date of birth</div>
+            <div class="col-sm-10">
+              <h5>Datepicker Placeholder</h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2">phone</div>
+            <div class="col-sm-4">
+              <input type="number" formControlName="phone" class="form-control">
+            </div>
+            <div class="col-sm-4"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2">password</div>
+            <div class="col-sm-4">
+              <input type="password" formControlName="password" class="form-control">
+            </div>
+            <div class="col-sm-4"></div>
+          </div>
+          <!-- <div class="row">
+          <div class="col-sm-2">confirm password</div>
+          <div class="col-sm-4">
+            <input type="text" formControlName="confirm password" class="form-control">
+          </div>
+          <div class="col-sm-4"></div>
+        </div> -->
+          <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4">
+              <button class="btn btn-primary" type="submit">Submit</button>
+              <button class="btn btn-primary" (click)="clearForm()">Clear</button>
+            </div>
+            <div class="col-sm-4"></div>
+          </div>
+
+
+        </form>
+
+
+
+
+      </div>
+      <div class="col-sm-12">
+        {{registrationForm.value | json}}
+      </div>
+    </div>
+  </div>
+
+  <div [hidden]="showList">
+    <div class="jumbotron">
+      <h1>Admins</h1>
+    </div>
+    <!-- {{adminList | json}} -->
+
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul class="list-group">
+                  <li class="list-group-item" *ngFor="let i of adminList">{{i.firstName}}</li>
+                </ul>
+              </td>
+              <td>
+                <ul class="list-group">
+                  <li class="list-group-item" *ngFor="let i of adminList">{{i.lastName}}</li>
+                </ul>
+              </td>
+              <td>
+                <ul class="list-group"> 
+                  <li class="list-group-item" *ngFor="let i of adminList">{{i.email}}</li>
+                </ul>
+              </td> 
+            </tr>
+           </tbody>
+        </table>
+
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
+
+
+
+  </div>
+</div>
