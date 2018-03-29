@@ -1,3 +1,38 @@
-<p>
-  contactus van works!
-</p>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Contact us</h1>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="row">
+        Office location
+      </div>
+      <div class="row">
+        Contat email
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <form [formGroup]="contactForm">
+        <div class="row">
+          <p>Name*</p>
+          <input type="text" class="form-control" placeholder="Enter your full name.">
+        </div>
+        <div class="row">
+          <p>Email*</p>
+          <input type="text" class="form-control" placeholder="Enter your email.">
+        </div>
+        <div class="row">
+            <p>Phone*</p>
+            <input type="number" class="form-control" placeholder="Enter your phone.">
+          </div>
+        <div class="row">
+          <p>Comment*</p>
+          <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="Enter your comments here."></textarea>
+        </div>
+        <br>
+        <br>
+       
+      </form>
+    </div>
+  </div>
+</div>
