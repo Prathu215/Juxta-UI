@@ -1,0 +1,28 @@
+<!-- <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let i of electronics">{{i.brand}}</li>          
+        </ul>
+      </div>
+    </div>
+</div> -->
+
+
+<div class="container">
+  <div class="jumbotron">
+      <h1>Electronics</h1>
+  </div>
+<form [formGroup]="electronicsListForm">
+    <div class="row">
+        <div class="col-sm-12">        
+            <div class="form-check" *ngFor="let i of electronics">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">{{i.brand}}</label>
+              </div>
+        </div>
+      </div>
+
+</form>
+
+</div>

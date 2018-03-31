@@ -16,6 +16,10 @@ import { AdminsComponent } from './admins/admins.component';
 import { AutomobilesComponent } from './automobiles/automobiles.component';
 import { ElectronicsComponent } from './electronics/electronics.component';
 import { AdminsService } from './admins/admins.service';
+import { AutomobilesListComponent } from './automobiles-list/automobiles-list.component';
+import { ElectronicsListComponent } from './electronics-list/electronics-list.component';
+import { CompareProductsComponent } from './compare-products/compare-products.component';
+import { ElectronicsListService } from './electronics-list/electronics-list.service';
 
 
 //import {DatepickerModule} from 'ngx-date-picker';
@@ -33,7 +37,10 @@ import { AdminsService } from './admins/admins.service';
     RegistrationComponent,
     AdminsComponent,
     AutomobilesComponent,
-    ElectronicsComponent
+    ElectronicsComponent,
+    AutomobilesListComponent,
+    ElectronicsListComponent,
+    CompareProductsComponent
 
   ],
   imports: [
@@ -52,11 +59,13 @@ import { AdminsService } from './admins/admins.service';
       {path:'register',component:RegistrationComponent},
       {path:'automobiles',component:AutomobilesComponent},
       {path:'electronics',component:ElectronicsComponent},
-      {path:'admins',component:AdminsComponent}
+      {path:'admins',component:AdminsComponent},
+      {path:'categories',component:CategoriesComponent},
+      {path:'categories/:categoryName',component:CompareProductsComponent}
       
     ])
   ],
-  providers: [RegistrationService,AdminsService], 
+  providers: [RegistrationService,AdminsService,ElectronicsListService], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
