@@ -11,25 +11,78 @@
 
 <div class="container">
   <div class="jumbotron">
-      <h1>Electronics</h1>
+    <h1>Electronics</h1>
   </div>
-<form [formGroup]="electronicsListForm">
+  <form [formGroup]="electronicsListForm">
     <div class="row" *ngIf="isElectronicsExists else error">
-        <div class="col-sm-12">        
-            <div class="form-check" *ngFor="let i of electronics">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">{{i.brand}}</label>
-              </div>
-        </div>
-      </div>
-      <ng-template>
-        <div class="row" #error>
-          <div class="col-sm-12">
-            <h1>Sorry No electronics found!!</h1>
+      <div class="col-sm-12">
+        <!-- <div>
+            <label class="checkbox-inline">
+                <input type="checkbox" value="">Option 1
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" value="">Option 2
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" value="">Option 3
+              </label>
+        </div> -->
+
+        <div fxLayout="row">
+          <div *ngFor="let i of filteredBrands">
+            <!-- <input type="checkbox" class="form-check-input" id="" [value]="i" (click)="onSelect($event)">
+                <label class="form-check-label checkbox-inline" for="">{{i}}</label>          -->
+            <label class="checkbox-inline">
+              <input type="checkbox" [value]="i" (click)="onSelect($event)">{{i}}
+            </label>
+            <!-- <label class="checkbox-inline" for="">
+                  <input type="checkbox" id="" [value]="i" (click)="onSelect($event)">
+                    {{i}}</label>   -->
           </div>
         </div>
-      </ng-template>
+        <br>
+        <br>
+        <div class="row border">
+          <div class="col-sm-3">
+            <div *ngIf="isDellChecked">
+              <div *ngFor="let i of dell">
+                <input type="checkbox" class="type" checkbox="" [value]="i.series" (click)="onSelect($event)"> {{i.series}}
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div *ngIf="isHpChecked">
+              <div *ngFor="let i of hp">
+                <input type="checkbox" class="type" checkbox=""> {{i.series}}
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3"></div>
+          <div class="col-sm-3"></div>
+        </div>
 
-</form>
+
+      </div>
+    </div>
+    <ng-template>
+      <div class="row" #error>
+        <div class="col-sm-12">
+          <h1>Sorry No electronics found!!</h1>
+        </div>
+      </div>
+    </ng-template>
+
+  </form>
+
+  <div class="row border">
+    <div class="col-sm-4">
+      <div *ngIf="isInspironChecked">
+        {{inspiron | json}}
+      </div>
+    </div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"></div>
+  </div>
+
 
 </div>

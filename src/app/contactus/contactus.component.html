@@ -12,26 +12,30 @@
       </div>
     </div>
     <div class="col-sm-8">
-      <form [formGroup]="contactForm">
+      <form [formGroup]="contactForm" (ngSubmit)="saveCustomer()">
         <div class="row">
           <p>Name*</p>
-          <input type="text" class="form-control" placeholder="Enter your full name.">
+          <input type="text" formControlName="name" class="form-control" placeholder="Enter your full name.">
         </div>
         <div class="row">
           <p>Email*</p>
-          <input type="text" class="form-control" placeholder="Enter your email.">
+          <input type="text" formControlName="email" class="form-control" placeholder="Enter your email.">
         </div>
         <div class="row">
-            <p>Phone*</p>
-            <input type="number" class="form-control" placeholder="Enter your phone.">
-          </div>
+          <p>Phone*</p>
+          <input type="number" formControlName="phone" class="form-control" placeholder="Enter your phone.">
+        </div>
         <div class="row">
           <p>Comment*</p>
-          <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="Enter your comments here."></textarea>
+          <textarea class="form-control" formControlName="comments" name="" id="" cols="30" rows="10" placeholder="Enter your comments here."></textarea>
+        </div>
+        <div class="row">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button class="btn btn-primary" (click)="clearForm()">Clear</button>
         </div>
         <br>
         <br>
-       
+
       </form>
     </div>
   </div>

@@ -20,6 +20,8 @@ import { AutomobilesListComponent } from './automobiles-list/automobiles-list.co
 import { ElectronicsListComponent } from './electronics-list/electronics-list.component';
 import { CompareProductsComponent } from './compare-products/compare-products.component';
 import { ElectronicsListService } from './electronics-list/electronics-list.service';
+import { LoginComponent } from './login/login.component';
+import { ContactUsService } from './contactus/contact-us.service';
 
 
 //import {DatepickerModule} from 'ngx-date-picker';
@@ -40,7 +42,8 @@ import { ElectronicsListService } from './electronics-list/electronics-list.serv
     ElectronicsComponent,
     AutomobilesListComponent,
     ElectronicsListComponent,
-    CompareProductsComponent
+    CompareProductsComponent,
+    LoginComponent
 
   ],
   imports: [
@@ -61,11 +64,11 @@ import { ElectronicsListService } from './electronics-list/electronics-list.serv
       {path:'electronics',component:ElectronicsComponent},
       {path:'admins',component:AdminsComponent},
       {path:'categories',component:CategoriesComponent},
+      {path:'login',component:LoginComponent},
       {path:'categories/:categoryName',component:CompareProductsComponent}
-      
     ])
   ],
-  providers: [RegistrationService,AdminsService,ElectronicsListService], 
+  providers: [RegistrationService,AdminsService,ElectronicsListService,ContactUsService], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class CategoriesComponent implements OnInit {
 
   constructor(private router:Router) { }
+  
   categoryName:string;
 
   ngOnInit() {

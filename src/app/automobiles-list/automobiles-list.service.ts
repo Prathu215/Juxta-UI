@@ -10,7 +10,7 @@ export class AutomobilesListService {
   constructor(private http:Http) { }
 
   getAutomobiles(){
-    this.http.get(this.baseUrl);
+    return this.http.get(this.baseUrl);
   }
 
 }

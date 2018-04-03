@@ -16,5 +16,11 @@ export class ElectronicsListService {
     return this.http.get(this.baseUrl)
                     .map(res=>res.json())
                     .catch(error => Observable.throw(error))}
+
+  getElectronicsBySeries(series):Observable<any>{
+    return this.http.get(this.baseUrl+'/series/'+series)
+                    .map(res=>res.json())
+                    .catch(error=>Observable.throw(error))
+  }             
   
 }
