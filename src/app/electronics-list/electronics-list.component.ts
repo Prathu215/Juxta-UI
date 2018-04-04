@@ -13,11 +13,14 @@ export class ElectronicsListComponent implements OnInit {
   isElectronicsExists: boolean = true;
   dell: any[] = [];
   hp: any[] = [];
+  apple:any[] = [];
   brands: any[] = [];
   inspiron:any;
   vostro:any;
   pavilion:any;
   envy:any;
+  macpro:any;
+  macair:any;
   filteredBrands: any[] = [];
   electronicsListForm: FormGroup;
   isDellChecked: boolean = false;
@@ -26,6 +29,9 @@ export class ElectronicsListComponent implements OnInit {
   isHpChecked:boolean=false;
   isPavilionChecked:boolean=false;
   isEnvyChecked:boolean=false;
+  isAppleChecked:boolean=false;
+  isMacProChecked:boolean=false;
+  isMacAirChecked:boolean=false;
   dellSeries:any[]=[];
 
   constructor(private electronicsListService: ElectronicsListService, private fb: FormBuilder) { }
@@ -61,6 +67,9 @@ export class ElectronicsListComponent implements OnInit {
         //  console.log(res[i], "printing hp");
           this.hp.push(res[i]);
         }
+        if (res[i].brand == "apple") {
+            this.apple.push(res[i]);
+          }
       }
      // console.log(this.dell, "dell array");
      // console.log(this.hp, "printing hp");
@@ -145,7 +154,35 @@ this.isEnvyChecked=false;
 if(event.target.value=="vostro" && event.target.checked==false){
   this.isVostroChecked=false;
 }
-    
+  
+if(event.target.value=="macpro" && event.target.checked==true){
+  this.electronicsListService.getElectronicsBySeries(event.target.value).subscribe(
+    res=>{
+      console.log(res);
+      this.macpro=res;
+      console.log("macpro is checked");
+      this.isMacProChecked=!this.isMacProChecked;
+    }
+  )
+}
+if(event.target.value=="macpro" && event.target.checked==false){
+this.isMacProChecked=false;
+}
+
+if(event.target.value=="macair" && event.target.checked==true){
+  this.electronicsListService.getElectronicsBySeries(event.target.value).subscribe(
+    res=>{
+      console.log(res);
+      this.macair=res;
+      console.log("macair is checked");
+      this.isMacAirChecked=!this.isMacAirChecked;
+    }
+  )
+}
+if(event.target.value=="macair" && event.target.checked==false){
+this.isMacAirChecked=false;
+}
+
 
     if (event.target.value == "dell" && event.target.checked == true) {
       console.log(event.target.value, "is checked");
@@ -163,7 +200,15 @@ if(event.target.value=="vostro" && event.target.checked==false){
       console.log(event.target.value, "is unchecked");
       this.isHpChecked = false;
     }
-
+    
+    if (event.target.value == "apple" && event.target.checked == true) {
+      console.log(event.target.value, "is checked");
+      this.isAppleChecked = !this.isAppleChecked;
+    }
+    if (event.target.value == "apple" && event.target.checked == false) {
+      console.log(event.target.value, "is unchecked");
+      this.isAppleChecked = false;
+    }
   }
 
 }

@@ -23,6 +23,10 @@ export class ContactusComponent implements OnInit {
 
   saveCustomer(){
     console.log(this.contactForm.value);
+    let body=Object.assign({},this.contactForm.value);
+    this.contactUsService.saveCustomer(body).subscribe(
+      res=>console.log(res));
+    this.contactForm.reset();
   }
   
   clearForm(){

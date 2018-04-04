@@ -9,9 +9,10 @@ export class ContactUsService {
 
   constructor(private http:Http) { }
 
-  public saveCustomer(data:any){
+  public saveCustomer(data:any):Observable<any>{   
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
+    console.log(data, "from service");
     return this.http.post(this.baseUrl,data,options)
                .map(res=>res.json())
                .catch(err=>Observable.throw(err));

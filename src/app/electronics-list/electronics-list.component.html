@@ -57,6 +57,13 @@
               </div>
             </div>
           </div>
+          <div class="col-sm-3">
+            <div *ngIf="isAppleChecked">
+              <div *ngFor="let i of apple">
+                <input type="checkbox" class="type" checkbox="" [value]="i.series" (click)="onSelect($event)"> {{i.series}}
+              </div>
+            </div>
+          </div>
           <div class="col-sm-3"></div>
           <div class="col-sm-3"></div>
         </div>
@@ -78,6 +85,10 @@
     <div class="col-sm-4">
       <div *ngIf="isInspironChecked">
         {{inspiron | json}}
+        <!-- Brand :<div style="background-color:yellowgreen" [innerHTML]="inspiron[0].brand"></div>
+        Model:<div style="background-color:yellowgreen" [innerHTML]="inspiron[0].model"></div>
+        Series<div style="background-color:yellowgreen" [innerHTML]="inspiron[0].series"></div>
+       -->
       </div>
       <br><br>
       <div *ngIf="isVostroChecked">
@@ -94,8 +105,16 @@
         {{envy | json}}
       </div>
     </div>
-    <div class="col-sm-4">
-      
+    <div class="col-sm-4">      
+      <div class="col-sm-4">
+        <div *ngIf="isMacProChecked">
+          {{macpro | json}}
+        </div>
+        <br><br>
+        <div *ngIf="isMacAirChecked">
+          {{macair | json}}
+        </div>
+      </div>
     </div>
   </div>
 
