@@ -53,7 +53,7 @@
           <div class="col-sm-3">
             <div *ngIf="isHpChecked">
               <div *ngFor="let i of hp">
-                <input type="checkbox" class="type" checkbox=""> {{i.series}}
+                <input type="checkbox" class="type" checkbox="" [value]="i.series" (click)="onSelect($event)"> {{i.series}}
               </div>
             </div>
           </div>
@@ -79,9 +79,24 @@
       <div *ngIf="isInspironChecked">
         {{inspiron | json}}
       </div>
+      <br><br>
+      <div *ngIf="isVostroChecked">
+        {{vostro | json}}
+      </div>
     </div>
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+     
+      <div *ngIf="isPavilionChecked">
+        {{pavilion | json}}
+      </div>
+      <br><br>
+      <div *ngIf="isEnvyChecked">
+        {{envy | json}}
+      </div>
+    </div>
+    <div class="col-sm-4">
+      
+    </div>
   </div>
 
 

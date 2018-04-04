@@ -15,11 +15,17 @@ export class ElectronicsListComponent implements OnInit {
   hp: any[] = [];
   brands: any[] = [];
   inspiron:any;
+  vostro:any;
+  pavilion:any;
+  envy:any;
   filteredBrands: any[] = [];
   electronicsListForm: FormGroup;
   isDellChecked: boolean = false;
   isInspironChecked:boolean=false;
+  isVostroChecked:boolean=false;
   isHpChecked:boolean=false;
+  isPavilionChecked:boolean=false;
+  isEnvyChecked:boolean=false;
   dellSeries:any[]=[];
 
   constructor(private electronicsListService: ElectronicsListService, private fb: FormBuilder) { }
@@ -96,17 +102,49 @@ export class ElectronicsListComponent implements OnInit {
           }
         )
     }
-
     if(event.target.value=="inspiron" && event.target.checked==false){
-      // this.electronicsListService.getElectronicsBySeries(event.target.value).subscribe(
-      //   res=>{console.log(res);
-      //     this.dellSeries.push(res);
-      //     console.log(this.dellSeries);
-          
-        //}
-     // )
      this.isInspironChecked=false;
   }
+
+  if(event.target.value=="pavilion" && event.target.checked==true){
+    this.electronicsListService.getElectronicsBySeries(event.target.value).subscribe(
+      res=>{console.log(res);
+        this.pavilion=res;
+        console.log("pavilion is checked");
+        this.isPavilionChecked=!this.isPavilionChecked;
+      }
+    )
+}
+if(event.target.value=="pavilion" && event.target.checked==false){
+ this.isPavilionChecked=false;
+}
+
+if(event.target.value=="envy" && event.target.checked==true){
+  this.electronicsListService.getElectronicsBySeries(event.target.value).subscribe(
+    res=>{console.log(res);
+      this.envy=res;
+      console.log("envy is checked");
+      this.isEnvyChecked=!this.isEnvyChecked;
+    }
+  )
+}
+if(event.target.value=="envy" && event.target.checked==false){
+this.isEnvyChecked=false;
+}
+
+  if(event.target.value=="vostro" && event.target.checked==true){
+    this.electronicsListService.getElectronicsBySeries(event.target.value).subscribe(
+      res=>{
+        console.log(res);
+        this.vostro=res;
+        console.log("vostro is checked");
+        this.isVostroChecked=!this.isVostroChecked;
+      }
+    )
+}
+if(event.target.value=="vostro" && event.target.checked==false){
+  this.isVostroChecked=false;
+}
     
 
     if (event.target.value == "dell" && event.target.checked == true) {
