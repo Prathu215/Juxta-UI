@@ -1,1 +1,103 @@
 
+
+
+<div class="container">
+    <div class="jumbotron">
+      <h1>Automobiles</h1>
+    </div>
+    <form [formGroup]="automobilesListForm">
+      <div class="row" *ngIf="isAutomobilesExists else error">
+        <div class="col-sm-12">
+
+          <div fxLayout="row">
+            <div *ngFor="let i of filteredBrands">
+              <!-- <input type="checkbox" class="form-check-input" id="" [value]="i" (click)="onSelect($event)">
+                  <label class="form-check-label checkbox-inline" for="">{{i}}</label>          -->
+              <label class="checkbox-inline">
+                <input type="checkbox" [value]="i" (click)="onSelect($event)">{{i}}
+              </label>
+              <!-- <label class="checkbox-inline" for="">
+                    <input type="checkbox" id="" [value]="i" (click)="onSelect($event)">
+                      {{i}}</label>   -->
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="row border">
+            <div class="col-sm-3">
+              <div *ngIf="isPorscheChecked">
+                <div *ngFor="let i of porsche">
+                  <input type="checkbox" class="type" checkbox="" [value]="i.series" (click)="onSelect($event)"> {{i.series}}
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div *ngIf="isAudiChecked">
+                <div *ngFor="let i of audi">
+                  <input type="checkbox" class="type" checkbox="" [value]="i.series" (click)="onSelect($event)"> {{i.series}}
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div *ngIf="isChevyChecked">
+                <div *ngFor="let i of chevy">
+                  <input type="checkbox" class="type" checkbox="" [value]="i.series" (click)="onSelect($event)"> {{i.series}}
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3"></div>
+          </div>
+  
+  
+        </div>
+      </div>
+      <ng-template>
+        <div class="row" #error>
+          <div class="col-sm-12">
+            <h1>Sorry No automobiles found!!</h1>
+          </div>
+        </div>
+      </ng-template>
+  
+    </form>
+  
+    <div class="row border">
+      <div class="col-sm-4">
+        <div *ngIf="isPanameraChecked">
+          {{panamera | json}}
+          <!-- Brand :<div style="background-color:yellowgreen" [innerHTML]="inspiron[0].brand"></div>
+          Model:<div style="background-color:yellowgreen" [innerHTML]="inspiron[0].model"></div>
+          Series<div style="background-color:yellowgreen" [innerHTML]="inspiron[0].series"></div>
+         -->
+        </div>
+        <br><br>
+        <div *ngIf="isCayanneChecked">
+          {{cayanne | json}}
+        </div>
+      </div>
+      <div class="col-sm-4">
+       
+        <div *ngIf="isA5Checked">
+          {{a5 | json}}
+        </div>
+        <br><br>
+        <div *ngIf="isR8Checked">
+          {{r8 | json}}
+        </div>
+      </div>
+      <div class="col-sm-4">      
+        <div class="col-sm-4">
+          <div *ngIf="isCamaroChecked">
+            {{camaro | json}}
+          </div>
+          <br><br>
+          <div *ngIf="isCorvetteChecked">
+            {{corvette | json}}
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  </div>

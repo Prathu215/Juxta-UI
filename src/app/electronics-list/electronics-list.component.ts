@@ -53,7 +53,7 @@ export class ElectronicsListComponent implements OnInit {
       for (let i = 0; i < this.electronics.length; i++) {
       //  console.log(res[i].brand);
 
-        if (res[i].brand == "dell") {
+        if (res[i].brand == "Dell") {
       //    console.log(res[i], "printing dell");
           this.dell.push(res[i]);
           // console.log(res[i]);
@@ -63,11 +63,11 @@ export class ElectronicsListComponent implements OnInit {
            
          console.log(this.dellSeries);         
         }
-        if (res[i].brand == "hp") {
+        if (res[i].brand == "HP") {
         //  console.log(res[i], "printing hp");
           this.hp.push(res[i]);
         }
-        if (res[i].brand == "apple") {
+        if (res[i].brand == "Apple") {
             this.apple.push(res[i]);
           }
       }
@@ -184,28 +184,28 @@ this.isMacAirChecked=false;
 }
 
 
-    if (event.target.value == "dell" && event.target.checked == true) {
+    if (event.target.value == "Dell" && event.target.checked == true) {
       console.log(event.target.value, "is checked");
       this.isDellChecked = !this.isDellChecked;
     }
-    if (event.target.value == "dell" && event.target.checked == false) {
+    if (event.target.value == "Dell" && event.target.checked == false) {
       console.log(event.target.value, "is unchecked");
       this.isDellChecked = false;
     }
-    if (event.target.value == "hp" && event.target.checked == true) {
+    if (event.target.value == "HP" && event.target.checked == true) {
       console.log(event.target.value, "is checked");
       this.isHpChecked = !this.isHpChecked;
     }
-    if (event.target.value == "hp" && event.target.checked == false) {
+    if (event.target.value == "HP" && event.target.checked == false) {
       console.log(event.target.value, "is unchecked");
       this.isHpChecked = false;
     }
     
-    if (event.target.value == "apple" && event.target.checked == true) {
+    if (event.target.value == "Apple" && event.target.checked == true) {
       console.log(event.target.value, "is checked");
       this.isAppleChecked = !this.isAppleChecked;
     }
-    if (event.target.value == "apple" && event.target.checked == false) {
+    if (event.target.value == "Apple" && event.target.checked == false) {
       console.log(event.target.value, "is unchecked");
       this.isAppleChecked = false;
     }

@@ -20,6 +20,7 @@ import { AutomobilesListComponent } from './automobiles-list/automobiles-list.co
 import { ElectronicsListComponent } from './electronics-list/electronics-list.component';
 import { CompareProductsComponent } from './compare-products/compare-products.component';
 import { ElectronicsListService } from './electronics-list/electronics-list.service';
+import { AutomobilesListService } from './automobiles-list/automobiles-list.service';
 import { LoginComponent } from './login/login.component';
 import { ContactUsService } from './contactus/contact-us.service';
 
@@ -68,7 +69,7 @@ import { ContactUsService } from './contactus/contact-us.service';
       {path:'categories/:categoryName',component:CompareProductsComponent}
     ])
   ],
-  providers: [RegistrationService,AdminsService,ElectronicsListService,ContactUsService], 
+  providers: [RegistrationService,AdminsService,ElectronicsListService,ContactUsService,AutomobilesListService], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

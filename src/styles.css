@@ -1,9 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+
 .border{
-    border:1px solid black;
+    border:1px solid white;
+    /* border:1px solid black; */
 }
 
 body{
-    background: url(assets/background.jpg);
-    background-repeat: no-repeat;
+    background: url(assets/bblack.jpg);
+    background-repeat: repeat; 
+    /* background-repeat: no-repeat; */
 }
+
+body{
+    /* color :white; */
+    color:rgb(18, 228, 46);
+}
+
+
+
+
+
+
+
+    
+    
+.jumbotron{
+    color: #6351ce;
+    /*background-color:none !important;*/
+}
+
+/* For jumbotran reference-
+"https://stackoverflow.com/questions/22904102/how-to-change-the-background-color-of-jumbrotron " */
+
+

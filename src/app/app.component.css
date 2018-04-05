@@ -10,21 +10,24 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #0099CC;
+    background-color: #6351ce;
+    /* background-color: #0099CC; */
     overflow-x: hidden;
-    padding-top: 20px;
+    padding-top: 30px;
+    /* padding-top: 20px; */
 }
 
 .sidenav a {  
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 27px;
     color: white;
     display: block;
 } 
 
 .sidenav a:hover { 
-    color: black;
+    color:red;
+    /* color: black; */
 }
 
 .main {
@@ -56,7 +59,8 @@ html, body{
 }
 
 body{
-  background: #030321;
+  background: white;
+  /* background: #030321; */
   font-family: Arial;
 }
 
