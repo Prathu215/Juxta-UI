@@ -1,16 +1,24 @@
 <div class="container-fluid">
+  <!-- <h1 id="title" style="color:#6351ce">Categories</h1> -->
   <div class="jumbotron">
-    <h1>Categories</h1>
+    <h1 style="color:#6351ce">Categories</h1>
   </div>
-  <div class="well">
+  <div>
     <h1>Please select one of the following.</h1>
     <div class="row">
         <div class="col-sm-3">
-          <button class="btn btn-primary" (click)="routeToAutomobiles()">Automobiles</button>
-          <img src="assets/car1.jpg" alt="">
+          <button class="btn btn-primary" (click)="routeToAutomobiles()">
+            <h1>Automobiles</h1>
+            <img height="450px" width="600px" style="margin-top:-10%" src="assets/auto.png" alt="porsche">
+          </button>
+          <!-- <img src="assets/car1.jpg" alt=""> -->
         </div>
-        <div class="col-sm-9">
-          <button class="btn btn-primary"  (click)="routeToElectronics()">Electronics</button>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+          <button class="btn btn-primary"  (click)="routeToElectronics()">
+            <h1>Electronics</h1>
+            <img height="300px" width="500px" src="assets/dell.png" alt="dell">
+          </button>
         </div>
       </div>
   </div>
